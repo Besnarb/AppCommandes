@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="AppCommandes.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:AppCommandes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    mc:Ignorable="d">
+
+    <Grid x:Name="Root">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <GridView
+            x:Name="MainMenu"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Yellow"
+            ItemsSource="{Binding Menus}">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Button
+                            Width="100"
+                            Height="100"
+                            Click="MenuButton_Click"
+                            Content="{Binding Name}" />
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid MaximumRowsOrColumns="3" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+        <Grid
+            x:Name="BackButton"
+            Grid.Row="1"
+            Background="Gray"
+            Visibility="Collapsed">
+            <Button
+                Margin="10"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Click="BackButton_Click"
+                Content="Retour" />
+        </Grid>
+    </Grid>
+</Page>
