@@ -14,7 +14,7 @@ namespace AppCommandes.Data
         public string Remarks { get; set; }
         public int Day { get; set; }
         public int Hour { get; set; }
-        public ObservableCollection<Product> Products { get; set; }
+        public ObservableCollection<OrderedProduct> Products { get; set; }
 
     }
 }

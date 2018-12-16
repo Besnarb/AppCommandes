@@ -121,6 +121,7 @@
     </Compile>
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\DataHolder.cs" />
+    <Compile Include="Data\OrderedProduct.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

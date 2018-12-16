@@ -58,7 +58,6 @@ namespace AppCommandes
             //{
             //    if (Menus.Where(Menu => Menu.Name == product.Category).Count() == 0)
             //    {
-
             //    }
             //}
             DataContext = this;

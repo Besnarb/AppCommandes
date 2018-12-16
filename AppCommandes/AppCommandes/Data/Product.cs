@@ -11,6 +11,6 @@ namespace AppCommandes.Data
         public string Name { get; set; }
         public double Price { get; set; }
         public string Category { get; set; }
-        public bool? Sliced { get; set; }
+        public bool? Slicable { get; set; }
     }
 }

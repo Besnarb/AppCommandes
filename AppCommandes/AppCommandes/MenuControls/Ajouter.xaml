@@ -13,73 +13,65 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBox
-                    x:Name="ClientName"
-                    Margin="10"
-                    PlaceholderText="Nom" />
-                <TextBox
-                    x:Name="Phone"
-                    Margin="10"
-                    PlaceholderText="Telephone" />
-                <TextBox
-                    x:Name="Remarks"
-                    Height="300"
-                    Margin="10"
-                    AcceptsReturn="True"
-                    PlaceholderText="Notes" />
-                <local:StatesControl x:Name="Day" />
+            <ScrollViewer>
 
-                <ScrollViewer>
-                    <ListView x:Name="Products" Margin="10">
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
-                        <ListViewItem>
-                            <TextBlock Text="dsfd" />
-                        </ListViewItem>
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <TextBox
+                        x:Name="ClientName"
+                        Margin="10"
+                        PlaceholderText="Nom" />
+                    <TextBox
+                        x:Name="Phone"
+                        Margin="10"
+                        PlaceholderText="Telephone" />
+                    <TextBox
+                        x:Name="Remarks"
+                        Height="300"
+                        Margin="10"
+                        AcceptsReturn="True"
+                        PlaceholderText="Notes" />
+                    <local:StatesControl x:Name="Day" />
+                    <ListView x:Name="ProductsList" Margin="10">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Product.Name}" />
+                                    <Button Content="+" />
+                                    <Button Content="-" />
+                                    <TextBlock Text="{Binding Quantity}" />
+                                    <ToggleButton Content="Traché" IsChecked="{Binding Sliced}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
                     </ListView>
-                </ScrollViewer>
-            </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
         <Grid Grid.Column="1">
-            <GridView
-                x:Name="ProductsMenu"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Background="Yellow">
-                <GridView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Button
-                                Width="100"
-                                Height="100"
-                                Click="Button_Click"
-                                Content="{Binding}" />
-                        </Grid>
-                    </DataTemplate>
-                </GridView.ItemTemplate>
-                <GridView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <ItemsWrapGrid MaximumRowsOrColumns="3" />
-                    </ItemsPanelTemplate>
-                </GridView.ItemsPanel>
-            </GridView>
+            <ScrollViewer>
+                <GridView
+                    x:Name="ProductsMenu"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="Yellow">
+                    <GridView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Button
+                                    Width="100"
+                                    Height="100"
+                                    Click="Button_Click"
+                                    Content="{Binding Name}" />
+                            </Grid>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid MaximumRowsOrColumns="3" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                </GridView>
+            </ScrollViewer>
         </Grid>
     </Grid>
 </UserControl>
