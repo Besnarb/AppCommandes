@@ -33,22 +33,34 @@
                     <ListView x:Name="ProductsList" Margin="10">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="10" Text="{Binding Product.Name}" />
-                                    <Button
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock
+                                        Grid.Column="0"
                                         Margin="10"
-                                        Click="NbProd_Click"
-                                        Content="+" />
-                                    <Button
-                                        Margin="10"
-                                        Click="NbProd_Click"
-                                        Content="-" />
-                                    <TextBlock Margin="10" Text="{Binding Quantity, Mode=TwoWay}" />
-                                    <ToggleButton
-                                        Margin="10"
-                                        Content="Tranché"
-                                        IsChecked="{Binding Sliced}" />
-                                </StackPanel>
+                                        Text="{Binding Product.Name}" />
+                                    <StackPanel
+                                        Grid.Column="1"
+                                        HorizontalAlignment="Right"
+                                        Orientation="Horizontal">
+                                        <Button
+                                            Margin="10"
+                                            Click="NbProd_Click"
+                                            Content="+" />
+                                        <Button
+                                            Margin="10"
+                                            Click="NbProd_Click"
+                                            Content="-" />
+                                        <TextBlock Margin="10" Text="{Binding Quantity, Mode=TwoWay}" />
+                                        <ToggleButton
+                                            Margin="10"
+                                            Content="Tranché"
+                                            IsChecked="{Binding Sliced}" />
+                                    </StackPanel>
+                                </Grid>
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -74,8 +86,15 @@
                                 <Button
                                     Width="100"
                                     Height="100"
-                                    Click="Button_Click"
-                                    Content="{Binding Name}" />
+                                    Click="Button_Click">
+                                    <Button.Content>
+                                        <TextBlock
+                                            Height="100"
+                                            Text="{Binding Name}"
+                                            TextWrapping="WrapWholeWords" />
+                                    </Button.Content>
+                                </Button>
+                                <!--  Content="" />  -->
                             </Grid>
                         </DataTemplate>
                     </GridView.ItemTemplate>

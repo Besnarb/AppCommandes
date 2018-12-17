@@ -1,43 +1,197 @@
 [
   {
-    "Name": "b",
+    "Name": "1/2 litre Glace",
+    "Price": 4.50,
+    "Category": "Patisserie"
+  },
+  {
+    "Name": "10 PETITS FOURS SUCRES",
+    "Price": 9.60,
+    "Category": "Patisserie"
+  },
+  {
+    "Name": "3 pains individuels",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "6 Bugnes",
+    "Price": 2.90,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BABA AU RHUM",
+    "Price": 3.50,
+    "Category": "Patisserie"
+  },
+  {
+    "Name": "BAG OPERA",
+    "Price": 1.90,
+    "Category": "Pain"
+  },
+  {
+    "Name": "BAGUETTE  AUX GRAINES",
+    "Price": 1.40,
+    "Category": "Pain"
+  },
+  {
+    "Name": "baguette  l'epeautre",
+    "Price": 1.40,
+    "Category": "Pain"
+  },
+  {
+    "Name": "BAGUETTE AU BLE GERME",
+    "Price": 1.40,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Baguette N7",
+    "Price": 1.40,
+    "Category": "Pain"
+  },
+  {
+    "Name": "BANDE GUIMAUVE",
+    "Price": 1.80,
+    "Category": "Divers"
+  },
+  {
+    "Name": "Banette Moisson",
+    "Price": 2.10,
+    "Category": "Pain"
+  },
+  {
+    "Name": "BEIGNET",
+    "Price": 1.50,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRESSANE",
+    "Price": 8.80,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHE",
+    "Price": 4.00,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHE AUX PRALINES",
+    "Price": 5.50,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHE DES ROIS",
+    "Price": 7.10,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHE SAUCISSON",
+    "Price": 8.50,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "BRIOCHETTE",
+    "Price": 1.50,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHETTE CHOCOLAT",
+    "Price": 1.50,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BRIOCHETTE PRALINES",
+    "Price": 1.50,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "BROCHETTE 3 PAINS",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "BROWNIES",
+    "Price": 2.50,
+    "Category": "Patisserie"
+  },
+  {
+    "Name": "Rudolf 6p",
     "Price": 21,
-    "Category": "f"
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 10,
-    "Category": "f"
+    "Name": "Rudolf 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "Z"
+    "Name": "Petit Papa Noel 6p",
+    "Price": 21,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "C"
+    "Name": "Petit Papa Noel 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "C"
+    "Name": "Noel Jazz 6p",
+    "Price": 21,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "X"
+    "Name": "Noel Jazz 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "f"
+    "Name": "Noel Blanc 6p",
+    "Price": 21,
+    "Category": "Buches"
   },
   {
-    "Name": "b",
-    "Price": 11.2,
-    "Category": "Z"
+    "Name": "Noel Blanc 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Chocolat 6p",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Chocolat 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Praline 6p",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Praline 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Cafe 6p",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Cafe 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Vanille 6p",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Vanille 8p",
+    "Price": 28,
+    "Category": "Buches"
   }
 ]
-

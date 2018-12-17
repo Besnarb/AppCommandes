@@ -43,7 +43,13 @@ namespace AppCommandes.MenuControls
             {
                 if (!Categories.Any( cat => cat.Category == product.Category))
                 {
-                    Categories.Add(product);
+                    Categories.Add(new Product()
+                    {
+                        Category = product.Category,
+                        Name = product.Category,
+                        Price = 0,
+                        Slicable = null
+                    });
                 }
             }
             ProductsMenu.ItemsSource = Categories;
@@ -59,13 +65,7 @@ namespace AppCommandes.MenuControls
                     foreach (var products in DataHolder.Products)
                     {
                         if (products.Category == ((Product)((Button)sender).DataContext).Category)//
-                            SelectedProducts.Add(new Product()
-                            {
-                                Name = products.Category,
-                                Category = products.Category,
-                                Price = 0,
-                                Slicable = null
-                            });
+                            SelectedProducts.Add(products);
                     }
                     ProductsMenu.ItemsSource = SelectedProducts;
                     state++;
@@ -75,7 +75,7 @@ namespace AppCommandes.MenuControls
                     OrderedProducts.Add(new OrderedProduct()
                     {
                         Product = (Product)((Button)sender).DataContext,
-                        Quantity = 0,
+                        Quantity = 1,
                         Sliced = null
                     });
                     state--;
@@ -90,7 +90,7 @@ namespace AppCommandes.MenuControls
             OrderedProduct data = (OrderedProduct) ((Button) sender).DataContext;
             if (btn.Content.ToString() == "+")
                 data.Quantity++;
-            else if (btn.Content.ToString() == "-" && data.Quantity > 0)
+            else if (btn.Content.ToString() == "-" && data.Quantity > 1)
                 data.Quantity--;
         }
 
