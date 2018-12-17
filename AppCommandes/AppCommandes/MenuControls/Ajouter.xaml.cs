@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -81,6 +82,38 @@ namespace AppCommandes.MenuControls
                     break;
             }
       
+        }
+
+        private void NbProd_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = sender as Button;
+            OrderedProduct data = (OrderedProduct) ((Button) sender).DataContext;
+            if (btn.Content.ToString() == "+")
+                data.Quantity++;
+            else if (btn.Content.ToString() == "-" && data.Quantity > 0)
+                data.Quantity--;
+        }
+
+        private void Valider_Click(object sender, RoutedEventArgs e)
+        {
+            int completed = 0;
+            if (ClientName.Text.Count() == 0)
+            {
+                ClientName.Background = new SolidColorBrush(Colors.Red);
+                completed++;
+            }
+            if (Phone.Text.Count() == 0)
+            {
+                Phone.Background = new SolidColorBrush(Colors.Red);
+                completed++;
+            }
+            if (ProductsList.Items.Count() == 0)
+            {
+                ClientName.Background = new SolidColorBrush(Colors.Red);
+                completed++;
+            }
+            if (completed == 0)
+                ;
         }
     }
 }
