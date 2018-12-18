@@ -1,118 +1,93 @@
 [
   {
-    "Name": "1/2 litre Glace",
-    "Price": 4.50,
-    "Category": "Patisserie"
-  },
-  {
-    "Name": "10 PETITS FOURS SUCRES",
-    "Price": 9.60,
-    "Category": "Patisserie"
-  },
-  {
-    "Name": "3 pains individuels",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "6 Bugnes",
-    "Price": 2.90,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BABA AU RHUM",
-    "Price": 3.50,
-    "Category": "Patisserie"
-  },
-  {
-    "Name": "BAG OPERA",
+    "Name": "Seigle",
     "Price": 1.90,
     "Category": "Pain"
   },
   {
-    "Name": "BAGUETTE  AUX GRAINES",
+    "Name": "Viking",
     "Price": 1.40,
     "Category": "Pain"
   },
   {
-    "Name": "baguette  l'epeautre",
+    "Name": "Ciabatta",
     "Price": 1.40,
     "Category": "Pain"
   },
   {
-    "Name": "BAGUETTE AU BLE GERME",
+    "Name": "Tourte de seigle",
     "Price": 1.40,
     "Category": "Pain"
   },
   {
-    "Name": "Baguette N7",
+    "Name": "Banette noire",
     "Price": 1.40,
     "Category": "Pain"
   },
   {
-    "Name": "BANDE GUIMAUVE",
-    "Price": 1.80,
-    "Category": "Divers"
-  },
-  {
-    "Name": "Banette Moisson",
-    "Price": 2.10,
-    "Category": "Pain"
-  },
-  {
-    "Name": "BEIGNET",
-    "Price": 1.50,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRESSANE",
-    "Price": 8.80,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHE",
-    "Price": 4.00,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHE AUX PRALINES",
-    "Price": 5.50,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHE DES ROIS",
-    "Price": 7.10,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHE SAUCISSON",
-    "Price": 8.50,
-    "Category": "Traiteur"
-  },
-  {
-    "Name": "BRIOCHETTE",
-    "Price": 1.50,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHETTE CHOCOLAT",
-    "Price": 1.50,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BRIOCHETTE PRALINES",
-    "Price": 1.50,
-    "Category": "Viennoiserie"
-  },
-  {
-    "Name": "BROCHETTE 3 PAINS",
+    "Name": "Toast Nature",
     "Price": 2.50,
     "Category": "Pain"
   },
   {
-    "Name": "BROWNIES",
+    "Name": "Toast Figues",
     "Price": 2.50,
-    "Category": "Patisserie"
+    "Category": "Pain"
+  },
+  {
+    "Name": "Medieval",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain au Mais",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain epices",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain gourmand",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Miche antan",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Forestier",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Baguette aux graines",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Brochette 3 pains",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Tortue",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Crocodile",
+    "Price": 2.50,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Crabe",
+    "Price": 2.50,
+    "Category": "Pain"
   },
   {
     "Name": "Rudolf 6p",
@@ -185,13 +160,73 @@
     "Category": "Buches"
   },
   {
-    "Name": "Vanille 6p",
+    "Name": "Noisette",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Vanille 8p",
-    "Price": 28,
+    "Name": "Vanille Fraise",
+    "Price": 21,
     "Category": "Buches"
+  },
+  {
+    "Name": "Caramel Beurre sale",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Framboise",
+    "Price": 21,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Feuilletés Salés",
+    "Price": 21,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Plaque Quiche",
+    "Price": 21,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Plaque Pizza",
+    "Price": 21,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Pain surprise 40 toasts",
+    "Price": 21,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Pain surprise 20 toasts",
+    "Price": 21,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Chocolat",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
+    "Name": "Pralines",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
+    "Name": "Amandes",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
+    "Name": "Pommes",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
+    "Name": "Cerises",
+    "Price": 21,
+    "Category": "Galettes"
   }
 ]
