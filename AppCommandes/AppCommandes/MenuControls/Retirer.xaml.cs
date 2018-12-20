@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppCommandes.Data;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,9 +20,27 @@ namespace AppCommandes.MenuControls
 {
     public sealed partial class Retirer : UserControl
     {
+        DataHolder dataHolder;
         public Retirer()
         {
             this.InitializeComponent();
+            this.Loaded += Retirer_Loaded;
+        }
+
+        private void Retirer_Loaded(object sender, RoutedEventArgs e)
+        {
+            dataHolder = ((MainPage)DataContext).DataHolder;
+            ClientsList.ItemsSource = dataHolder.Clients;
+        }
+
+        private void Date_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DisplayAll_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

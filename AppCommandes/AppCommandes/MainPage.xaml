@@ -45,7 +45,7 @@
                 Margin="10"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
-                Click="BackButton_Click"
+                Click="ActualMenu_Unloaded"
                 Content="Retour" />
         </Grid>
     </Grid>

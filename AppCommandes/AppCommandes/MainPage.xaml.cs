@@ -70,6 +70,7 @@ namespace AppCommandes
             MainMenu.Visibility = Visibility.Collapsed;
             BackButton.Visibility = Visibility.Visible;
             Root.Children.Add(actualMenu);
+            actualMenu.Unloaded += ActualMenu_Unloaded;
 
             //switch (menu.Name)
             //{
@@ -87,7 +88,7 @@ namespace AppCommandes
             //}
         }
 
-        private void BackButton_Click(object sender, RoutedEventArgs e)
+        private void ActualMenu_Unloaded(object sender, RoutedEventArgs e)
         {
             MainMenu.Visibility = Visibility.Visible;
             BackButton.Visibility = Visibility.Collapsed;

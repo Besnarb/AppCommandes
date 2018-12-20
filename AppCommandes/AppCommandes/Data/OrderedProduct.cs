@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AppCommandes.Data
 {
-    class OrderedProduct :INotifyPropertyChanged
+    public class OrderedProduct :INotifyPropertyChanged
     {
         public Product Product { get; set; }
         private int _quantity;

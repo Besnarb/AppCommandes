@@ -72,12 +72,20 @@ namespace AppCommandes.MenuControls
                     break;
                 case 1:
                     ProductsMenu.ItemsSource = Categories;
-                    OrderedProducts.Add(new OrderedProduct()
+                    var query = OrderedProducts.Where(op => op.Product == (Product)((Button)sender).DataContext);
+                    if (query.Count() > 0)
                     {
-                        Product = (Product)((Button)sender).DataContext,
-                        Quantity = 1,
-                        Sliced = null
-                    });
+                        query.First().Quantity++;
+                    }
+                    else
+                    {
+                        OrderedProducts.Add(new OrderedProduct()
+                        {
+                            Product = (Product)((Button)sender).DataContext,
+                            Quantity = 1,
+                            Sliced = null
+                        });
+                    }
                     state--;
                     break;
             }
@@ -113,7 +121,36 @@ namespace AppCommandes.MenuControls
                 completed++;
             }
             if (completed == 0)
-                ;
+            {
+                DataHolder.Clients.Add(new Client()
+                {
+                    Name = ClientName.Text,
+                    Phone = Phone.Text,
+                    Remarks = Remarks.Text,
+                    Day = Day.Date,
+                    Hour = Day.Hour,
+                    Products = OrderedProducts
+                });
+                DataHolder.Save();
+                ClientName.Text = "";
+                Phone.Text = "";
+                Remarks.Text = "";
+                OrderedProducts.Clear();
+                ProductsMenu.ItemsSource = Categories;
+                ((Grid)this.Parent).Children.Remove(this);
+            }
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            OrderedProduct data = (OrderedProduct)((Button)sender).DataContext;
+            OrderedProducts.Remove(data);
+        }
+
+        private void ToggleButton_Click(object sender, RoutedEventArgs e)
+        {
+            OrderedProduct data = (OrderedProduct)((Button)sender).DataContext;
+            data.Sliced = ((ToggleButton)sender).IsChecked;
         }
     }
 }
