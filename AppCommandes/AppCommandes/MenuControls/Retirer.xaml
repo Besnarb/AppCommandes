@@ -19,13 +19,13 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button
+            <ToggleButton
                 x:Name="Noel"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Click="Date_Click"
                 Content="24" />
-            <Button
+            <ToggleButton
                 x:Name="An"
                 Grid.Column="1"
                 HorizontalAlignment="Center"
@@ -39,7 +39,8 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Click="DisplayAll_Click"
-                Content="Toutes" />
+                Content="Toutes"
+                IsChecked="True" />
             <TextBox
                 x:Name="SearchBar"
                 Grid.ColumnSpan="2"

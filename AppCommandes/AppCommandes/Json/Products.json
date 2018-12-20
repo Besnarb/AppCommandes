@@ -1,12 +1,12 @@
 [
   {
     "Name": "Seigle",
-    "Price": 1.90,
+    "Price": 2.1,
     "Category": "Pain"
   },
   {
     "Name": "Viking",
-    "Price": 1.40,
+    "Price": 2.10,
     "Category": "Pain"
   },
   {
@@ -36,12 +36,12 @@
   },
   {
     "Name": "Medieval",
-    "Price": 2.50,
+    "Price": 2.10,
     "Category": "Pain"
   },
   {
     "Name": "Pain au Mais",
-    "Price": 2.50,
+    "Price": 2.10,
     "Category": "Pain"
   },
   {
@@ -66,7 +66,7 @@
   },
   {
     "Name": "Baguette aux graines",
-    "Price": 2.50,
+    "Price": 1.40,
     "Category": "Pain"
   },
   {
@@ -228,5 +228,87 @@
     "Name": "Cerises",
     "Price": 21,
     "Category": "Galettes"
+  },
+  {
+    "Name": "baguette tradition",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain sans gluten",
+    "Price": 0,
+    "Category": "Pain"
+  },
+  {
+    "Name": "pain de mie",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Flute",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain de Campagne",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag Epeautre",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Buche de Voyage",
+    "Price": 11.90,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Coeur de lin",
+    "Price": 2.10,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Moisson",
+    "Price": 2.10,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag Ap Olives",
+    "Price": 1.90,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag Ap Reblochon",
+    "Price": 1.90,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag Ap Chorizo",
+    "Price": 1.90,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag Ap Bleu",
+    "Price": 1.90,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Brioche tressee",
+    "Price": 4,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Pain Indiv Graines",
+    "Price": 0,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain Indiv Seigle",
+    "Price": 0,
+    "Category": "Pain"
   }
 ]
+
+

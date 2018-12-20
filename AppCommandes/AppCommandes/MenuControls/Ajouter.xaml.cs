@@ -129,8 +129,11 @@ namespace AppCommandes.MenuControls
                     Remarks = Remarks.Text,
                     Day = Day.Date,
                     Hour = Day.Hour,
+                    State = 1,
                     Products = OrderedProducts
                 });
+                if (Remarks.Text != "")
+                    DataHolder.Clients.Last().State++;
                 DataHolder.Save();
                 ClientName.Text = "";
                 Phone.Text = "";
@@ -149,7 +152,7 @@ namespace AppCommandes.MenuControls
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
-            OrderedProduct data = (OrderedProduct)((Button)sender).DataContext;
+            OrderedProduct data = (OrderedProduct)((ToggleButton)sender).DataContext;
             data.Sliced = ((ToggleButton)sender).IsChecked;
         }
     }
