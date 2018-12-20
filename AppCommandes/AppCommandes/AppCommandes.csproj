@@ -146,6 +146,7 @@
     </AppxManifest>
     <None Include="AppCommandes_TemporaryKey.pfx" />
     <Content Include="Json\Products.json" />
+    <Content Include="Json\Clients.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />

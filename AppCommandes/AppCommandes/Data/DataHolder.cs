@@ -45,5 +45,16 @@ namespace AppCommandes.Data
             Products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(json);
             System.Diagnostics.Debug.WriteLine("Products loaded");
         }
+        async void PopulateClientsAsync()
+        {
+            StorageFile clientsFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Json/Clients.json"));
+            Clients = new ObservableCollection<Client>();
+            string json = await Windows.Storage.FileIO.ReadTextAsync(clientsFile);
+            if (json.Count() != 0)
+            {
+                Clients = JsonConvert.DeserializeObject<ObservableCollection<Client>>(json);
+                System.Diagnostics.Debug.WriteLine("Products loaded");
+            }
+        }
     }
 }

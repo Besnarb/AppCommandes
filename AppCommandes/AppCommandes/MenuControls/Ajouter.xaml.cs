@@ -120,6 +120,11 @@ namespace AppCommandes.MenuControls
                 ClientName.Background = new SolidColorBrush(Colors.Red);
                 completed++;
             }
+            if (Day.Hour == -1)
+            {
+                Day.Background = new SolidColorBrush(Colors.Red);
+                completed++;
+            }
             if (completed == 0)
             {
                 DataHolder.Clients.Add(new Client()

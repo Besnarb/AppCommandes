@@ -16,6 +16,5 @@ namespace AppCommandes.Data
         public int Hour { get; set; }
         public int State { get; set; }
         public ObservableCollection<OrderedProduct> Products { get; set; }
-
     }
 }
