@@ -22,46 +22,33 @@ namespace AppCommandes.MenuControls
     public sealed partial class Retirer : UserControl
     {
         DataHolder dataHolder;
-        ObservableCollection<Client> ClientCollection;
         //0 partie
         //1 En attente
         //2 en Attente + note
         public Retirer()
         {
-            ClientCollection = new ObservableCollection<Client>();
             this.InitializeComponent();
             this.Loaded += Retirer_Loaded;
         }
         void UpdateCollection()
         {
             dataHolder = ((MainPage)DataContext).DataHolder;
-            ClientCollection.Clear();
-            if (DisplayAll.IsChecked == true)
-                ClientCollection = dataHolder.Clients;
+            if (DisplayAll.IsChecked == false)
+                ClientsList.ItemsSource = dataHolder.Clients.Where(cmd => cmd.Name.ToLower() == SearchBar.Text.ToLower()).AsEnumerable();
             else
-            {
-                ClientCollection.ToList().AddRange(dataHolder.Clients.Where(cmd => cmd.State > 0));
-                if (Noel.IsChecked == true)
-                    ClientCollection.ToList().AddRange(ClientCollection.Where(cmd => cmd.Day == 24));
-                if (An.IsChecked == true)
-                    ClientCollection.ToList().AddRange(ClientCollection.Where(cmd => cmd.Day == 31));
-
-                if (SearchBar.Text.Count() > 0)
-                    ClientCollection = (ObservableCollection<Client>)ClientCollection.Where(cmd => cmd.Name.ToLower() == SearchBar.Text.ToLower()).AsEnumerable();
-            }
-            ClientsList.ItemsSource = ClientCollection.OrderBy(cmd => cmd.Hour);
+                ClientsList.ItemsSource = dataHolder.Clients.Where(tmp => tmp.State > 0).Where(tmp => tmp.Name.ToUpper().Contains(SearchBar.Text.ToUpper()));
         }
         private void Retirer_Loaded(object sender, RoutedEventArgs e)
         {
             UpdateCollection();
         }
-
-        private void Date_Click(object sender, RoutedEventArgs e)
+      
+        private void DisplayAll_Click(object sender, RoutedEventArgs e)
         {
             UpdateCollection();
         }
 
-        private void DisplayAll_Click(object sender, RoutedEventArgs e)
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateCollection();
         }

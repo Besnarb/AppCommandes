@@ -20,19 +20,6 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <ToggleButton
-                x:Name="Noel"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Click="Date_Click"
-                Content="24" />
-            <ToggleButton
-                x:Name="An"
-                Grid.Column="1"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                Click="Date_Click"
-                Content="31" />
-            <ToggleButton
                 x:Name="DisplayAll"
                 Grid.ColumnSpan="2"
                 Margin="10"
@@ -46,6 +33,7 @@
                 Grid.ColumnSpan="2"
                 Width="200"
                 Margin="10"
+                TextChanged="SearchBar_TextChanged"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
                 PlaceholderText="Search" />
