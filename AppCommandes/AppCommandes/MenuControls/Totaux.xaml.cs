@@ -21,13 +21,20 @@ namespace AppCommandes.MenuControls
 {
     public sealed partial class Totaux : UserControl
     {
-        public struct prod
+        public class Prod
         {
-            public Product product { get; set; }
-            public int quant { get; set; }
+            public Product Product { get; set; }
+            public int Quant { get; set; }
+            public string DisplayString
+            {
+                get
+                {
+                    return String.Format("{0} : {1}", Product.Name, Quant);
+                }
+            }
         }
 
-        public ObservableCollection<prod> observableCollection;
+        public ObservableCollection<Prod> observableCollection;
         DataHolder dataHolder;
         public Totaux()
         {
@@ -37,18 +44,21 @@ namespace AppCommandes.MenuControls
 
         private void Totaux_Loaded(object sender, RoutedEventArgs e)
         {
-            observableCollection = new ObservableCollection<prod>();
+            observableCollection = new ObservableCollection<Prod>();
             dataHolder = ((MainPage)DataContext).DataHolder;
             foreach (var data in dataHolder.Products)
             {
-                observableCollection.Add(new prod() { product = data, quant = 0 });
+                observableCollection.Add(new Prod() { Product = data, Quant = 0 });
             }
             foreach (var client in dataHolder.Clients)
             {
                 foreach (var pr in client.Products)
                 {
                     //https://stackoverflow.com/questions/6781192/how-do-i-update-a-single-item-in-an-observablecollection-class
-                    observableCollection.FirstOrDefault(tmp => tmp.product.Name == pr.Product.Name).quant += pr.Quantity;
+                    var prod = observableCollection.First(tmp => tmp.Product.Name == pr.Product.Name);
+                    var idx = observableCollection.IndexOf(prod);
+                    prod.Quant += pr.Quantity;
+                    observableCollection[idx] = prod;
                 }
             }
             Total.ItemsSource = observableCollection;

@@ -5,8 +5,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:AppCommandes.MenuControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
     mc:Ignorable="d">
 
     <Grid>
@@ -21,12 +19,7 @@
                         <TextBlock
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            Text="{Binding product.Name}" />
-                        <TextBlock
-                            Grid.Column="1"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Text="{Binding quant}" />
+                            Text="{Binding DisplayString}" />
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>

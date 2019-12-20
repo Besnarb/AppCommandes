@@ -41,7 +41,7 @@ namespace AppCommandes.Data
         async void PopulateProductsAsync()
         {
             StorageFile sampleFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Json/Products.json"));
-            string json = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
+            string json = await Windows.Storage.FileIO.ReadTextAsync(sampleFile,Windows.Storage.Streams.UnicodeEncoding.Utf8);
             Products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(json);
             System.Diagnostics.Debug.WriteLine("Products loaded");
         }

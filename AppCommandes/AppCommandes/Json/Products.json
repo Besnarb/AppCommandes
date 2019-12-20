@@ -1,152 +1,17 @@
 [
   {
-    "Name": "Seigle",
-    "Price": 2.1,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Viking",
-    "Price": 2.10,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Ciabatta",
-    "Price": 1.40,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Tourte de seigle",
-    "Price": 1.40,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Banette noire",
-    "Price": 1.40,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Toast Nature",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Toast Figues",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Medieval",
-    "Price": 2.10,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain au Mais",
-    "Price": 2.10,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain epices",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain gourmand",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Miche antan",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Forestier",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Baguette aux graines",
-    "Price": 1.40,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Brochette 3 pains",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Tortue",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Crocodile",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Crabe",
-    "Price": 2.50,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Rudolf 6p",
+    "Name": "Berlingot 6p",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Rudolf 8p",
+    "Name": "Berlingot 8p",
     "Price": 28,
     "Category": "Buches"
   },
   {
-    "Name": "Petit Papa Noel 6p",
-    "Price": 21,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Petit Papa Noel 8p",
-    "Price": 28,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Noel Jazz 6p",
-    "Price": 21,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Noel Jazz 8p",
-    "Price": 28,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Noel Blanc 6p",
-    "Price": 21,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Noel Blanc 8p",
-    "Price": 28,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Chocolat 6p",
-    "Price": 21,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Chocolat 8p",
-    "Price": 28,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Praline 6p",
-    "Price": 21,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Praline 8p",
-    "Price": 28,
+    "Name": "Buche de Voyage",
+    "Price": 12,
     "Category": "Buches"
   },
   {
@@ -160,57 +25,97 @@
     "Category": "Buches"
   },
   {
-    "Name": "Noisette",
+    "Name": "Pomme caramel beurre sale",
+    "Price": 28,
+    "Category": "Buches Glacees"
+  },
+  {
+    "Name": "Chocolat 6p",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Vanille Fraise",
+    "Name": "Chocolat 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Litchi coeur fruits de la passion",
+    "Price": 28,
+    "Category": "Buches Glacees"
+  },
+  {
+    "Name": "Matriochka 6p",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Caramel Beurre sale",
+    "Name": "Matriochka 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Pirouette 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Chocolat noisette",
+    "Price": 28,
+    "Category": "Buches Glacees"
+  },
+  {
+    "Name": "Pirouette 6p",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Framboise",
+    "Name": "Praline 6p",
     "Price": 21,
     "Category": "Buches"
   },
   {
-    "Name": "Feuilletes Sales",
-    "Price": 21,
-    "Category": "Traiteur"
+    "Name": "Praline 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "Plaque Quiche",
+    "Name": "Rudolf 6p",
     "Price": 21,
-    "Category": "Traiteur"
+    "Category": "Buches"
   },
   {
-    "Name": "Plaque Pizza",
-    "Price": 21,
-    "Category": "Traiteur"
+    "Name": "Rudolf 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "Pain surprise 40 toasts",
+    "Name": "Vanille 6p",
     "Price": 21,
-    "Category": "Traiteur"
+    "Category": "Buches"
   },
   {
-    "Name": "Pain surprise 20 toasts",
-    "Price": 21,
-    "Category": "Traiteur"
+    "Name": "Vanille 8p",
+    "Price": 28,
+    "Category": "Buches"
   },
   {
-    "Name": "Chocolat",
+    "Name": "Zebulon 6p",
     "Price": 21,
-    "Category": "Galettes"
+    "Category": "Buches"
   },
   {
-    "Name": "Pralines",
+    "Name": "Zebulon 8p",
+    "Price": 28,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Profiterolle",
+    "Price": 28,
+    "Category": "Buches Glacees"
+  },
+  {
+    "Name": "Amande et Cerises",
     "Price": 21,
     "Category": "Galettes"
   },
@@ -220,95 +125,183 @@
     "Category": "Galettes"
   },
   {
+    "Name": "Chocolat",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
+    "Name": "Citron",
+    "Price": 21,
+    "Category": "Galettes"
+  },
+  {
     "Name": "Pommes",
     "Price": 21,
     "Category": "Galettes"
   },
   {
-    "Name": "Cerises",
+    "Name": "Pralines",
     "Price": 21,
     "Category": "Galettes"
   },
   {
-    "Name": "baguette tradition",
-    "Price": 1,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain sans gluten",
-    "Price": 0,
-    "Category": "Pain"
-  },
-  {
-    "Name": "pain de mie",
+    "Name": "Bag Ap Chevre miel",
     "Price": 2,
     "Category": "Pain"
   },
   {
-    "Name": "Flute",
-    "Price": 1,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain de Campagne",
-    "Price": 1,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Bag Epeautre",
-    "Price": 1,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Buche de Voyage",
-    "Price": 11.90,
-    "Category": "Buches"
-  },
-  {
-    "Name": "Coeur de lin",
-    "Price": 2.10,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Moisson",
-    "Price": 2.10,
+    "Name": "Bag Ap Chorizo",
+    "Price": 2,
     "Category": "Pain"
   },
   {
     "Name": "Bag Ap Olives",
-    "Price": 1.90,
+    "Price": 2,
     "Category": "Pain"
   },
   {
     "Name": "Bag Ap Reblochon",
-    "Price": 1.90,
+    "Price": 2,
     "Category": "Pain"
   },
   {
-    "Name": "Bag Ap Chorizo",
-    "Price": 1.90,
+    "Name": "Epeautre",
+    "Price": 2,
     "Category": "Pain"
   },
   {
-    "Name": "Bag Ap Bleu",
-    "Price": 1.90,
+    "Name": "Baguette aux graines",
+    "Price": 1.5,
     "Category": "Pain"
+  },
+  {
+    "Name": "Baguette tradition",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Brochette 3 pains",
+    "Price": 2.5,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Ciabatta",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Grenette",
+    "Price": 1.5,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Crabe",
+    "Price": 2.5,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Crocodile",
+    "Price": 2.5,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Flute",
+    "Price": 1.6,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Forestier",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain des Asteques",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain au Mais",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain de Campagne",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain de mie",
+    "Price": 2.6,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain epices",
+    "Price": 6,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain Indiv Graines",
+    "Price": 0.7,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain Indiv Mais",
+    "Price": 0.7,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pain indiv trad",
+    "Price": 0.7,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Toast Figues",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Mais chorizo",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Tortue",
+    "Price": 2.5,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Tourte de seigle",
+    "Price": 4,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Feuilletes Sales (10 pieces)",
+    "Price": 3.7,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Pain surprise 20 toasts",
+    "Price": 15.95,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Pain surprise 40 toasts",
+    "Price": 25.95,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Plaque Pizza",
+    "Price": 29,
+    "Category": "Traiteur"
+  },
+  {
+    "Name": "Plaque Quiche",
+    "Price": 29,
+    "Category": "Traiteur"
   },
   {
     "Name": "Brioche tressee",
     "Price": 4,
     "Category": "Viennoiserie"
-  },
-  {
-    "Name": "Pain Indiv Graines",
-    "Price": 0,
-    "Category": "Pain"
-  },
-  {
-    "Name": "Pain Indiv Seigle",
-    "Price": 0,
-    "Category": "Pain"
   }
 ]
-
-
