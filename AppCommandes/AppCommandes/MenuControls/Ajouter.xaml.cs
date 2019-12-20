@@ -67,23 +67,27 @@ namespace AppCommandes.MenuControls
                         if (products.Category == ((Product)((Button)sender).DataContext).Category)//
                             SelectedProducts.Add(products);
                     }
+                    ProductsMenuBack.IsEnabled = true;
                     ProductsMenu.ItemsSource = SelectedProducts;
                     state++;
                     break;
                 case 1:
                     ProductsMenu.ItemsSource = Categories;
-                    var query = OrderedProducts.Where(op => op.Product == (Product)((Button)sender).DataContext);
-                    if (query.Count() > 0)
+                    ProductsMenuBack.IsEnabled = false;
+                    var prod = (Product)((Button)sender).DataContext;
+                    var query = OrderedProducts.FirstOrDefault(op => op.Product == prod);
+                    if (query != null)
                     {
-                        query.First().Quantity++;
+                        query.Quantity++;
                     }
                     else
                     {
                         OrderedProducts.Add(new OrderedProduct()
                         {
-                            Product = (Product)((Button)sender).DataContext,
+                            Product = prod,
                             Quantity = 1,
-                            Sliced = null
+                            Sliced = false,
+                            Slicable = prod.Category == "Pain" ? true : false
                         });
                     }
                     state--;
@@ -153,7 +157,13 @@ namespace AppCommandes.MenuControls
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             OrderedProduct data = (OrderedProduct)((ToggleButton)sender).DataContext;
-            data.Sliced = ((ToggleButton)sender).IsChecked;
+            data.Sliced = ((ToggleButton)sender).IsChecked.Value;
+        }
+
+        private void ProductsMenuBack_Click(object sender, RoutedEventArgs e)
+        {
+            ProductsMenu.ItemsSource = Categories;
+            state--;
         }
     }
 }

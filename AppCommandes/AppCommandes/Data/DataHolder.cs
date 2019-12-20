@@ -15,11 +15,15 @@ namespace AppCommandes.Data
     {
         public ObservableCollection<Product> Products { get; set; }
         public ObservableCollection<Client> Clients { get; set; }
-        private StorageFolder storageFolder;
-        private StorageFile clientsFile;
+        private StorageFolder StorageFolder { get; set; }
+        private StorageFile clientsFile { get; set; }
         public DataHolder()
         {
-            storageFolder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder; // C:\Users\Antoine\AppData\Local\Packages\ApplicationCommande2018_zfcpjwz6qmvxy\LocalState
+            Refresh();
+        }
+        public void Refresh()
+        {
             PopulateProductsAsync();
             PopulateClientsAsync();
         }
@@ -30,7 +34,7 @@ namespace AppCommandes.Data
         }
         async void PopulateClientsAsync()
         {
-            clientsFile = await storageFolder.CreateFileAsync("Clients.json",CreationCollisionOption.OpenIfExists);
+            clientsFile = await StorageFolder.CreateFileAsync("Clients.json",CreationCollisionOption.OpenIfExists);
             string json = await FileIO.ReadTextAsync(clientsFile);
             Clients = JsonConvert.DeserializeObject<ObservableCollection<Client>>(json);
             if (Clients == null)
@@ -42,7 +46,7 @@ namespace AppCommandes.Data
         {
             StorageFile sampleFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Json/Products.json"));
             string json = await Windows.Storage.FileIO.ReadTextAsync(sampleFile,Windows.Storage.Streams.UnicodeEncoding.Utf8);
-            Products = JsonConvert.DeserializeObject<ObservableCollection<Product>>(json);
+            Products = new ObservableCollection<Product>(JsonConvert.DeserializeObject<ObservableCollection<Product>>(json).OrderBy(e => e.Category).ThenBy(f => f.Name));
             System.Diagnostics.Debug.WriteLine("Products loaded");
         }
     }

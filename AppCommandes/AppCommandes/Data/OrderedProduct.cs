@@ -31,6 +31,7 @@ namespace AppCommandes.Data
             }
         }
 
-        public bool? Sliced { get; set; }
+        public bool Sliced { get; set; }
+        public bool Slicable { get; set; }
     }
 }

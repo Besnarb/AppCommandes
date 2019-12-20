@@ -22,7 +22,7 @@ namespace AppCommandes.MenuControls
         public StatesControl()
         {
             this.InitializeComponent();
-            if (DateTime.Compare( DateTime.Now, new DateTime(2018, 12, 24, 0, 0, 0)) <= 0)
+            if (DateTime.Compare( DateTime.Now.Date, new DateTime(DateTime.Now.Year, 12, 24, 0, 0, 0)) <= 0)
             {
                 Noel.IsChecked = true;
                 An.IsChecked = false;

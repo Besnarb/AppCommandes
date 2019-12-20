@@ -28,7 +28,7 @@ namespace AppCommandes
         public struct Menu
         {
             public string Name { get; set; }
-            public UserControl UserControl { get; set; }
+            //public UserControl UserControl { get; set; }
         }
         public DataHolder DataHolder { get; set; }
         public ObservableCollection<Menu> Menus { get; set; }
@@ -41,17 +41,17 @@ namespace AppCommandes
                 new Menu()
                 {
                     Name = "Retirer",
-                    UserControl = new Retirer ()
+                    //UserControl = new Retirer()
                 },
                 new Menu()
                 {
                     Name = "Ajouter",
-                    UserControl = new Ajouter ()
+                    //UserControl = new Ajouter()
                 },
                 new Menu()
                 {
                     Name = "Totaux",
-                    UserControl = new Totaux ()
+                    //UserControl = new Totaux()
                 }
             };
             //foreach (var product in DataHolder.Products)
@@ -66,7 +66,18 @@ namespace AppCommandes
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
-            actualMenu = ((Menu)((sender as Button).DataContext)).UserControl;
+            switch (((Menu)((sender as Button).DataContext)).Name)
+            {
+                case "Retirer":
+                    actualMenu = new Retirer();
+                    break;
+                case "Ajouter":
+                    actualMenu = new Ajouter();
+                    break;
+                case "Totaux":
+                    actualMenu = new Totaux();
+                    break;
+            }
             MainMenu.Visibility = Visibility.Collapsed;
             BackButton.Visibility = Visibility.Visible;
             Root.Children.Add(actualMenu);
@@ -92,6 +103,7 @@ namespace AppCommandes
         {
             MainMenu.Visibility = Visibility.Visible;
             BackButton.Visibility = Visibility.Collapsed;
+            DataHolder.Refresh();
             Root.Children.Remove(actualMenu);
         }
     }

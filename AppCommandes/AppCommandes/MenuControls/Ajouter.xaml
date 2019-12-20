@@ -61,7 +61,8 @@
                                         <ToggleButton
                                             Margin="10"
                                             Click="ToggleButton_Click"
-                                            Content="Tranché" />
+                                            Content="Tranché"
+                                            IsEnabled="{Binding Slicable}" />
                                         <Button Margin="10" Click="Delete_Click">
                                             <Button.Content>
                                                 <SymbolIcon Symbol="Delete" />
@@ -83,35 +84,43 @@
         </Grid>
         <Grid Grid.Column="1">
             <ScrollViewer>
-                <GridView
-                    x:Name="ProductsMenu"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Background="Yellow">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Button
-                                    Width="100"
-                                    Height="100"
-                                    Click="Button_Click">
-                                    <Button.Content>
-                                        <TextBlock
-                                            Height="100"
-                                            Text="{Binding Name}"
-                                            TextWrapping="WrapWholeWords" />
-                                    </Button.Content>
-                                </Button>
-                                <!--  Content="" />  -->
-                            </Grid>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                    <GridView.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <ItemsWrapGrid MaximumRowsOrColumns="3" Orientation="Horizontal" />
-                        </ItemsPanelTemplate>
-                    </GridView.ItemsPanel>
-                </GridView>
+                <Grid>
+
+                    <GridView
+                        x:Name="ProductsMenu"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="Yellow">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button
+                                        Width="100"
+                                        Height="100"
+                                        Click="Button_Click">
+                                        <Button.Content>
+                                            <TextBlock
+                                                Height="100"
+                                                Text="{Binding Name}"
+                                                TextWrapping="WrapWholeWords" />
+                                        </Button.Content>
+                                    </Button>
+                                    <!--  Content="" />  -->
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid MaximumRowsOrColumns="3" Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                    <Button
+                        x:Name="ProductsMenuBack"
+                        Click="ProductsMenuBack_Click"
+                        Content="Retour"
+                        IsEnabled="False" />
+                </Grid>
             </ScrollViewer>
         </Grid>
     </Grid>
