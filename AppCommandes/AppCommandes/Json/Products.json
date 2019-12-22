@@ -160,13 +160,13 @@
     "Category": "Pain"
   },
   {
-    "Name": "Bag Ap Reblochon",
+    "Name": "Bag Ap poulet curry",
     "Price": 2,
     "Category": "Pain"
   },
   {
-    "Name": "Epeautre",
-    "Price": 2,
+    "Name": "Grenette",
+    "Price": 1.5,
     "Category": "Pain"
   },
   {
@@ -185,7 +185,7 @@
     "Category": "Pain"
   },
   {
-    "Name": "Ciabatta",
+    "Name": "Baguette Mais",
     "Price": 2,
     "Category": "Pain"
   },
@@ -196,12 +196,12 @@
   },
   {
     "Name": "Crabe",
-    "Price": 2.5,
+    "Price": 4,
     "Category": "Pain"
   },
   {
     "Name": "Crocodile",
-    "Price": 2.5,
+    "Price": 4,
     "Category": "Pain"
   },
   {
@@ -215,7 +215,7 @@
     "Category": "Pain"
   },
   {
-    "Name": "Pain des Asteques",
+    "Name": "Pain complet",
     "Price": 2,
     "Category": "Pain"
   },
@@ -255,7 +255,7 @@
     "Category": "Pain"
   },
   {
-    "Name": "Toast Figues",
+    "Name": "Pain aux Figues",
     "Price": 2,
     "Category": "Pain"
   },
@@ -266,7 +266,7 @@
   },
   {
     "Name": "Tortue",
-    "Price": 2.5,
+    "Price": 4,
     "Category": "Pain"
   },
   {
@@ -303,5 +303,80 @@
     "Name": "Brioche tressee",
     "Price": 4,
     "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Flute de tradition",
+    "Price": 1.6,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Meule de pierre",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Boule de grigny",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Pave au levain",
+    "Price": 1,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Croissant",
+    "Price": 1,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Pain au chocolat",
+    "Price": 1,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Briochette aux pralines",
+    "Price": 1.5,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Pain aux raisins",
+    "Price": 1.5,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "10 chouquettes",
+    "Price": 2,
+    "Category": "Viennoiserie"
+  },
+  {
+    "Name": "Pain de Meule",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag au mais",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Bag poulet curry",
+    "Price": 2,
+    "Category": "Pain"
+  },
+  {
+    "Name": "Part Matriochka",
+    "Price": 3.5,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Buchette praline",
+    "Price": 3.5,
+    "Category": "Buches"
+  },
+  {
+    "Name": "Buchette vanille",
+    "Price": 3.5,
+    "Category": "Buches"
   }
 ]

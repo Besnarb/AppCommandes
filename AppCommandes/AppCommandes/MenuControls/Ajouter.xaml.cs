@@ -26,9 +26,42 @@ namespace AppCommandes.MenuControls
         ObservableCollection<Product> Categories { get; set; }
         ObservableCollection<Product> SelectedProducts { get; set; }
         ObservableCollection<OrderedProduct> OrderedProducts { get; set; }
+        Client LocalClient { get; set; }
+        public Ajouter(Client client)
+        {
+            Categories = new ObservableCollection<Product>();
+            LocalClient = client;
+            this.Loaded += Ajouter_Loaded1;
+            this.InitializeComponent();
+        }
+
+        private void Ajouter_Loaded1(object sender, RoutedEventArgs e)
+        {
+            ClientName.Text = LocalClient.Name;
+            Phone.Text = LocalClient.Phone;
+            Remarks.Text = LocalClient.Remarks;
+            OrderedProducts = LocalClient.Products;
+            ProductsList.ItemsSource = OrderedProducts;
+            DataHolder = ((MainPage)DataContext).DataHolder;
+            foreach (var product in DataHolder.Products)
+            {
+                if (!Categories.Any(cat => cat.Category == product.Category))
+                {
+                    Categories.Add(new Product()
+                    {
+                        Category = product.Category,
+                        Name = product.Category,
+                        Price = 0,
+                        Slicable = null
+                    });
+                }
+            }
+            ProductsMenu.ItemsSource = Categories;
+        }
 
         public Ajouter()
         {
+            LocalClient = null;
             Categories = new ObservableCollection<Product>();
             OrderedProducts = new ObservableCollection<OrderedProduct>();
             this.Loaded += Ajouter_Loaded;
@@ -126,18 +159,35 @@ namespace AppCommandes.MenuControls
             }
             if (completed == 0)
             {
-                DataHolder.Clients.Add(new Client()
+                if (LocalClient != null)
                 {
-                    Name = ClientName.Text,
-                    Phone = Phone.Text,
-                    Remarks = Remarks.Text,
-                    Day = Day.Date,
-                    Hour = Day.Hour,
-                    State = 1,
-                    Products = OrderedProducts
-                });
-                if (Remarks.Text != "")
-                    DataHolder.Clients.Last().State++;
+                    var idx = DataHolder.Clients.IndexOf(DataHolder.Clients.First(d => d.Number == LocalClient.Number));
+                    DataHolder.Clients[idx] = new Client()
+                    {
+                        Name = ClientName.Text,
+                        Phone = Phone.Text,
+                        Remarks = Remarks.Text,
+                        Day = Day.Date,
+                        Hour = Day.Hour,
+                        State = Remarks.Text == string.Empty ? 1 : 2,
+                        Products = OrderedProducts,
+                        Number = LocalClient.Number
+                    };
+                }
+                else
+                {
+                    DataHolder.Clients.Add(new Client()
+                    {
+                        Name = ClientName.Text,
+                        Phone = Phone.Text,
+                        Remarks = Remarks.Text,
+                        Day = Day.Date,
+                        Hour = Day.Hour,
+                        State = Remarks.Text == string.Empty ? 1 : 2,
+                        Products = OrderedProducts,
+                        Number = DataHolder.Clients.Last().Number + 1
+                    });
+                }
                 DataHolder.Save();
                 ClientName.Text = "";
                 Phone.Text = "";

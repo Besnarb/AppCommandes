@@ -54,12 +54,6 @@ namespace AppCommandes
                     //UserControl = new Totaux()
                 }
             };
-            //foreach (var product in DataHolder.Products)
-            //{
-            //    if (Menus.Where(Menu => Menu.Name == product.Category).Count() == 0)
-            //    {
-            //    }
-            //}
             DataContext = this;
             this.InitializeComponent();
         }
@@ -69,7 +63,9 @@ namespace AppCommandes
             switch (((Menu)((sender as Button).DataContext)).Name)
             {
                 case "Retirer":
-                    actualMenu = new Retirer();
+                    var retTmp = new Retirer();
+                    retTmp.ModifyRequested += RetTmp_ModifyRequested;
+                    actualMenu = retTmp;
                     break;
                 case "Ajouter":
                     actualMenu = new Ajouter();
@@ -98,13 +94,45 @@ namespace AppCommandes
             //        break;
             //}
         }
+        bool CanUse = true;
+        private void RetTmp_ModifyRequested(object sender, Client e)
+        {
+            CanUse = false;
+            DataHolder.Refresh();
+            Root.Children.Remove(actualMenu);
+            actualMenu = new Ajouter(e);
+            MainMenu.Visibility = Visibility.Collapsed;
+            BackButton.Visibility = Visibility.Visible;
+            Root.Children.Add(actualMenu);
+            actualMenu.Unloaded += ActualMenu_Unloaded;
+        }
 
         private void ActualMenu_Unloaded(object sender, RoutedEventArgs e)
         {
-            MainMenu.Visibility = Visibility.Visible;
-            BackButton.Visibility = Visibility.Collapsed;
-            DataHolder.Refresh();
-            Root.Children.Remove(actualMenu);
+            if (CanUse)
+            {
+                if (actualMenu is Retirer)
+                {
+                    var ret = actualMenu as Retirer;
+                    if (ret.IsDetailedView)
+                        ret.BackFromDetailedView();
+                    else
+                    {
+                        MainMenu.Visibility = Visibility.Visible;
+                        BackButton.Visibility = Visibility.Collapsed;
+                        DataHolder.Refresh();
+                        Root.Children.Remove(actualMenu);
+                    }
+                }
+                else
+                {
+                    MainMenu.Visibility = Visibility.Visible;
+                    BackButton.Visibility = Visibility.Collapsed;
+                    DataHolder.Refresh();
+                    Root.Children.Remove(actualMenu);
+                }
+            }
+            CanUse = true;
         }
     }
 }

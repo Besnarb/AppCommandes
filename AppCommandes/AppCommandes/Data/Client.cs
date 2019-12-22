@@ -15,6 +15,7 @@ namespace AppCommandes.Data
         public int Day { get; set; }
         public int Hour { get; set; }
         public int State { get; set; }
+        public int Number { get; set; }
         public ObservableCollection<OrderedProduct> Products { get; set; }
     }
 }

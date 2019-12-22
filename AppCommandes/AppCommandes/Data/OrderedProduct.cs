@@ -30,7 +30,15 @@ namespace AppCommandes.Data
                 PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
             }
         }
-
+        public string DisplayString
+        {
+            get
+            {
+                if (Slicable)
+                    return string.Format("{0} {1} {2}", Product.Name, Quantity, Sliced ? "Tranché" :"Non tranché");
+                return string.Format("{0} {1}", Product.Name, Quantity);
+            }
+        }
         public bool Sliced { get; set; }
         public bool Slicable { get; set; }
     }

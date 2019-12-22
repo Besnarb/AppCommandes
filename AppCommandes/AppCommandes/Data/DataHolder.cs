@@ -39,6 +39,13 @@ namespace AppCommandes.Data
             Clients = JsonConvert.DeserializeObject<ObservableCollection<Client>>(json);
             if (Clients == null)
                 Clients = new ObservableCollection<Client>();
+            //int i = 0;
+            //foreach(var c in Clients)
+            //{
+            //    c.Number = i;
+            //    i++;
+            //}
+            //Save();
             System.Diagnostics.Debug.WriteLine("Clients loaded");
         }
 

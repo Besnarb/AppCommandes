@@ -5,10 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:AppCommandes.MenuControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="300"
-    d:DesignWidth="400"
     mc:Ignorable="d">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="150" />
@@ -33,21 +30,76 @@
                 Grid.ColumnSpan="2"
                 Width="200"
                 Margin="10"
-                TextChanged="SearchBar_TextChanged"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Bottom"
-                PlaceholderText="Search" />
+                PlaceholderText="Search"
+                TextChanged="SearchBar_TextChanged" />
         </Grid>
         <ScrollViewer Grid.Row="1">
-            <ListView x:Name="ClientsList" Margin="10">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <TextBlock Text="{Binding Name}" />
-                        </Grid>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Grid>
+                <ListView
+                    x:Name="ClientsList"
+                    Margin="10"
+                    IsItemClickEnabled="True"
+                    ItemClick="ClientsList_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                    Margin="0,0,10,0"
+                                    FontSize="20"
+                                    Text="{Binding Number}" />
+                                <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Grid x:Name="DetailedGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel>
+                        <TextBlock
+                            x:Name="ClientName"
+                            Margin="10"
+                            Text="{Binding Name}" />
+                        <TextBlock
+                            x:Name="Phone"
+                            Margin="10"
+                            Text="{Binding Phone}" />
+                        <TextBlock
+                            x:Name="Remarks"
+                            Height="300"
+                            Margin="10"
+                            Text="{Binding Remarks}" />
+                        <StackPanel Orientation="Horizontal">
+                            <ToggleSwitch
+                                x:Name="RetirerToggle"
+                                OffContent="En attente"
+                                OnContent="Retirée"
+                                Toggled="Retirer_Toggled" />
+                            <Button
+                                x:Name="Modifier"
+                                Click="Modifier_Click"
+                                Content="Modifier" />
+                            <Button
+                                x:Name="Supprimer"
+                                Click="Supprimer_Click"
+                                Content="Supprimer" />
+                        </StackPanel>
+                    </StackPanel>
+                    <ListView Grid.Column="1" ItemsSource="{Binding Products}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" Text="{Binding DisplayString}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </Grid>
         </ScrollViewer>
     </Grid>
 </UserControl>
