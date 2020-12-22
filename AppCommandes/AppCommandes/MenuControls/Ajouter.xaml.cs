@@ -31,18 +31,19 @@ namespace AppCommandes.MenuControls
         {
             Categories = new ObservableCollection<Product>();
             LocalClient = client;
-            this.Loaded += Ajouter_Loaded1;
+            this.Loaded += Ajouter_LoadedWithClient;
             this.InitializeComponent();
         }
 
-        private void Ajouter_Loaded1(object sender, RoutedEventArgs e)
+        private async void Ajouter_LoadedWithClient(object sender, RoutedEventArgs e)
         {
             ClientName.Text = LocalClient.Name;
             Phone.Text = LocalClient.Phone;
             Remarks.Text = LocalClient.Remarks;
             OrderedProducts = LocalClient.Products;
             ProductsList.ItemsSource = OrderedProducts;
-            DataHolder = ((MainPage)DataContext).DataHolder;
+            DataHolder = new DataHolder();
+            await DataHolder.Init();
             foreach (var product in DataHolder.Products)
             {
                 if (!Categories.Any(cat => cat.Category == product.Category))
@@ -68,13 +69,14 @@ namespace AppCommandes.MenuControls
             this.InitializeComponent();
         }
 
-        private void Ajouter_Loaded(object sender, RoutedEventArgs e)
+        private async void Ajouter_Loaded(object sender, RoutedEventArgs e)
         {
             ProductsList.ItemsSource = OrderedProducts;
-            DataHolder = ((MainPage)DataContext).DataHolder;
+            DataHolder = new DataHolder();
+            await DataHolder.Init();
             foreach (var product in DataHolder.Products)
             {
-                if (!Categories.Any( cat => cat.Category == product.Category))
+                if (!Categories.Any(cat => cat.Category == product.Category))
                 {
                     Categories.Add(new Product()
                     {
@@ -126,20 +128,20 @@ namespace AppCommandes.MenuControls
                     state--;
                     break;
             }
-      
+
         }
 
         private void NbProd_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            OrderedProduct data = (OrderedProduct) ((Button) sender).DataContext;
+            OrderedProduct data = (OrderedProduct)((Button)sender).DataContext;
             if (btn.Content.ToString() == "+")
                 data.Quantity++;
             else if (btn.Content.ToString() == "-" && data.Quantity > 1)
                 data.Quantity--;
         }
 
-        private void Valider_Click(object sender, RoutedEventArgs e)
+        private async void Valider_Click(object sender, RoutedEventArgs e)
         {
             int completed = 0;
             if (ClientName.Text.Count() == 0)
@@ -161,22 +163,24 @@ namespace AppCommandes.MenuControls
             {
                 if (LocalClient != null)
                 {
-                    var idx = DataHolder.Clients.IndexOf(DataHolder.Clients.First(d => d.Number == LocalClient.Number));
-                    DataHolder.Clients[idx] = new Client()
-                    {
-                        Name = ClientName.Text,
-                        Phone = Phone.Text,
-                        Remarks = Remarks.Text,
-                        Day = Day.Date,
-                        Hour = Day.Hour,
-                        State = Remarks.Text == string.Empty ? 1 : 2,
-                        Products = OrderedProducts,
-                        Number = LocalClient.Number
-                    };
+                    //Modify
+                    await DataHolder.ModifyClient(
+                        new Client()
+                        {
+                            Name = ClientName.Text,
+                            Phone = Phone.Text,
+                            Remarks = Remarks.Text,
+                            Day = Day.Date,
+                            Hour = Day.Hour,
+                            State = Remarks.Text == string.Empty ? 1 : 2,
+                            Products = OrderedProducts,
+                            Number = LocalClient.Number
+                        });
                 }
                 else
                 {
-                    DataHolder.Clients.Add(new Client()
+                    //new client
+                    await DataHolder.SaveNewClient(new Client()
                     {
                         Name = ClientName.Text,
                         Phone = Phone.Text,
@@ -185,10 +189,9 @@ namespace AppCommandes.MenuControls
                         Hour = Day.Hour,
                         State = Remarks.Text == string.Empty ? 1 : 2,
                         Products = OrderedProducts,
-                        Number = DataHolder.Clients.Last().Number + 1
+                        Number = DataHolder.Clients.Any() ? DataHolder.Clients.Last().Number + 1 : 0
                     });
                 }
-                DataHolder.Save();
                 ClientName.Text = "";
                 Phone.Text = "";
                 Remarks.Text = "";

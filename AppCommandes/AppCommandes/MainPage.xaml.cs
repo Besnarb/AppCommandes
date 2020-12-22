@@ -30,28 +30,23 @@ namespace AppCommandes
             public string Name { get; set; }
             //public UserControl UserControl { get; set; }
         }
-        public DataHolder DataHolder { get; set; }
         public ObservableCollection<Menu> Menus { get; set; }
         public UserControl actualMenu;
         public MainPage()
         {
-            DataHolder = new DataHolder();
             Menus = new ObservableCollection<Menu>()
             {
                 new Menu()
                 {
                     Name = "Retirer",
-                    //UserControl = new Retirer()
                 },
                 new Menu()
                 {
                     Name = "Ajouter",
-                    //UserControl = new Ajouter()
                 },
                 new Menu()
                 {
                     Name = "Totaux",
-                    //UserControl = new Totaux()
                 }
             };
             DataContext = this;
@@ -98,7 +93,6 @@ namespace AppCommandes
         private void RetTmp_ModifyRequested(object sender, Client e)
         {
             CanUse = false;
-            DataHolder.Refresh();
             Root.Children.Remove(actualMenu);
             actualMenu = new Ajouter(e);
             MainMenu.Visibility = Visibility.Collapsed;
@@ -120,7 +114,6 @@ namespace AppCommandes
                     {
                         MainMenu.Visibility = Visibility.Visible;
                         BackButton.Visibility = Visibility.Collapsed;
-                        DataHolder.Refresh();
                         Root.Children.Remove(actualMenu);
                     }
                 }
@@ -128,7 +121,6 @@ namespace AppCommandes
                 {
                     MainMenu.Visibility = Visibility.Visible;
                     BackButton.Visibility = Visibility.Collapsed;
-                    DataHolder.Refresh();
                     Root.Children.Remove(actualMenu);
                 }
             }

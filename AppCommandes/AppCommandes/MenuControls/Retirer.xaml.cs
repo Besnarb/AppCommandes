@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -21,7 +22,7 @@ namespace AppCommandes.MenuControls
 {
     public sealed partial class Retirer : UserControl
     {
-        DataHolder dataHolder;
+        DataHolder DataHolder;
         public bool IsDetailedView { get; set; }
         //0 partie
         //1 En attente
@@ -32,27 +33,29 @@ namespace AppCommandes.MenuControls
             IsDetailedView = false;
             this.Loaded += Retirer_Loaded;
         }
-        void UpdateCollection()
+        private async Task UpdateCollection()
         {
-            dataHolder = ((MainPage)DataContext).DataHolder;
-            if (DisplayAll.IsChecked == false)
-                ClientsList.ItemsSource = dataHolder.Clients.Where(cmd => cmd.Name.ToLower() == SearchBar.Text.ToLower()).AsEnumerable();
+            DataHolder = new DataHolder();
+            await DataHolder.Init();
+            if (DisplayAll.IsChecked == true)
+                ClientsList.ItemsSource = DataHolder.Clients.Where(cmd => cmd.Name.ToUpper().Contains(SearchBar.Text.ToUpper()));
             else
-                ClientsList.ItemsSource = dataHolder.Clients.Where(tmp => tmp.State >= 0).Where(tmp => tmp.Name.ToUpper().Contains(SearchBar.Text.ToUpper())); // Enlever le supérieur ou égal
+                ClientsList.ItemsSource = DataHolder.Clients.Where(tmp => tmp.State > 0).Where(tmp => tmp.Name.ToUpper().Contains(SearchBar.Text.ToUpper())); // Enlever le supérieur ou égal
+            TotalListe.Text = ClientsList.Items.Count.ToString() + "/" + DataHolder.Clients.Count.ToString();
         }
-        private void Retirer_Loaded(object sender, RoutedEventArgs e)
+        private async void Retirer_Loaded(object sender, RoutedEventArgs e)
         {
-            UpdateCollection();
+            await UpdateCollection();
         }
       
-        private void DisplayAll_Click(object sender, RoutedEventArgs e)
+        private async void DisplayAll_Click(object sender, RoutedEventArgs e)
         {
-            UpdateCollection();
+            await UpdateCollection();
         }
 
-        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            UpdateCollection();
+            await UpdateCollection();
         }
         public void BackFromDetailedView()
         {
@@ -77,7 +80,7 @@ namespace AppCommandes.MenuControls
             ModifyRequested?.Invoke(this, (DetailedGrid.DataContext as Client));
         }
 
-        private void Retirer_Toggled(object sender, RoutedEventArgs e)
+        private async void Retirer_Toggled(object sender, RoutedEventArgs e)
         {
             var client = (DetailedGrid.DataContext as Client);
             if (client != null)
@@ -86,20 +89,20 @@ namespace AppCommandes.MenuControls
                     client.State = 0;
                 else
                     client.State = client.Remarks == string.Empty ? 1 : 2;
-                dataHolder.Save();
+                await DataHolder.ModifyClient(client);
+                await UpdateCollection();
             }
         }
 
-        private void Supprimer_Click(object sender, RoutedEventArgs e)
+        private async void Supprimer_Click(object sender, RoutedEventArgs e)
         {
             var client = (DetailedGrid.DataContext as Client);
             if (client != null)
             {
-                dataHolder.Clients.Remove(client);
                 SearchBar.Text = string.Empty;
-                UpdateCollection();
                 BackFromDetailedView();
-                dataHolder.Save();
+                await DataHolder.RemoveClient(client);
+                await UpdateCollection();
             }
         }
     }

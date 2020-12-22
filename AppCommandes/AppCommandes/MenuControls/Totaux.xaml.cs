@@ -44,22 +44,23 @@ namespace AppCommandes.MenuControls
         }
 
         public ObservableCollection<Prod> observableCollection;
-        DataHolder dataHolder;
+        DataHolder DataHolder;
         public Totaux()
         {
             this.InitializeComponent();
             this.Loaded += Totaux_Loaded;
         }
 
-        private void Totaux_Loaded(object sender, RoutedEventArgs e)
+        private async void Totaux_Loaded(object sender, RoutedEventArgs e)
         {
             observableCollection = new ObservableCollection<Prod>();
-            dataHolder = ((MainPage)DataContext).DataHolder;
-            foreach (var data in dataHolder.Products)
+            DataHolder = new DataHolder();
+            await DataHolder.Init();
+            foreach (var data in DataHolder.Products)
             {
                 observableCollection.Add(new Prod() { Product = data, Quant = 0 , SlicedQuant = 0});
             }
-            foreach (var client in dataHolder.Clients)
+            foreach (var client in DataHolder.Clients)
             {
                 foreach (var pr in client.Products)
                 {

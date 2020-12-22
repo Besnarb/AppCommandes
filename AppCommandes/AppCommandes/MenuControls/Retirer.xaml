@@ -16,6 +16,7 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <TextBlock x:Name="TotalListe" FontSize="50" />
             <ToggleButton
                 x:Name="DisplayAll"
                 Grid.ColumnSpan="2"
@@ -60,6 +61,11 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel>
+                        <TextBlock
+                            x:Name="ClientNumber"
+                            Margin="10"
+                            FontSize="30"
+                            Text="{Binding Number}" />
                         <TextBlock
                             x:Name="ClientName"
                             Margin="10"

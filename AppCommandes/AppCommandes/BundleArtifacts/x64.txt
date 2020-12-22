@@ -1,2 +1,2 @@
-MainPackage=C:\Users\Antoine\source\repos\AppCommandes\AppCommandes\AppCommandes\bin\x64\Debug\AppCommandes_1.0.2.0_x64_Debug.msix
-SymbolPackage=C:\Users\Antoine\source\repos\AppCommandes\AppCommandes\AppCommandes\obj\x64\Debug\Symbols\AppCommandes_1.0.2.0_x64_Debug.appxsym
+MainPackage=C:\Users\Antoine\Source\Repos\Besnarb\AppCommandes\AppCommandes\AppCommandes\bin\x64\Debug\AppCommandes_1.0.7.0_x64_Debug.msix
+SymbolPackage=C:\Users\Antoine\Source\Repos\Besnarb\AppCommandes\AppCommandes\AppCommandes\obj\x64\Debug\Symbols\AppCommandes_1.0.7.0_x64_Debug.appxsym
